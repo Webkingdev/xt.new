@@ -17,9 +17,10 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="plugins/material/material.js"></script>
 	<script src="plugins/owl-carousel/owl.carousel.min.js"></script>
+	<script src="js/func.js"></script>
 	<script src="js/main.js"></script>
 </head>
-<body>
+<body class="banner_hidden">
 	<div class="background_panel"></div>
 	<header class="default">
 		<div class="header_wrapp clearfix">
@@ -52,7 +53,7 @@
 				</form>
 			</div>
 			<ul class="header_nav mdl-cell--hide-phone">
-				<li><a href="#" class="checkout">Оформить заказ</a></li>
+				<!-- <li><a href="#" class="checkout">Оформить заказ</a></li> -->
 				<li><a href="#">Поставки магазинам</a></li>
 				<li>
 					<button id="menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon navigation">
@@ -65,7 +66,7 @@
 						<li class="mdl-menu__item">Yet Another Action</li>
 					</ul>
 				</li>
-				<li><button class="mdl-button mdl-js-button enter_btn">Мой кабинет</button></li>
+				<li><button class="mdl-button mdl-js-button enter_btn">Войти</button></li>
 			</ul>
 			<nav class="phone_menu">
 				<span class="material-icons menu">menu</span>
@@ -109,7 +110,7 @@
 		</div>
 	</section>
 	<section class="main">
-		<aside class="mdl-color--grey-100 mdl-cell--hide-phone">
+		<aside class="mdl-color--grey-100 mdl-cell--hide-phone hidden">
 			<div class="sidebar_wrapp">
 				<div class="catalog">
 					<ul class="main_nav">
@@ -491,167 +492,307 @@
 				</div>
 			</div>
 		</aside>
-		<section class="center">
-			<div class="stat_year mdl-color--grey-100 mdl-cell--hide-phone clearfix">
-				<div class="stat_info">
-					<p>График опроса</p>
-					<ul>
-						<li>Горячий сезон</li>
-						<li>Активный</li>
-						<li>Межсезонные</li>
-					</ul>
-				</div>
-				<div class="graph_block">
-					<div class="stat_title">
-						<p class="mopt_demand"><span></span>Розничный cпрос</p>
-						<p class="opt_demand"><span></span>Оптовый спрос</p>
-					</div>
-					<div class="график"></div>
-					<nav class="stat_month">
-						<ul>
-							<li>Январь</li>
-							<li>Февраль</li>
-							<li>Март</li>
-							<li>Апрель</li>
-							<li class="active">Май</li>
-							<li>Июнь</li>
-							<li>Июль</li>
-							<li>Август</li>
-							<li>Сентябрь</li>
-							<li>Октябрь</li>
-							<li>Ноябрь</li>
-							<li>Декабрь</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
+		<section class="center product_page">
 			<div class="content">
-				<div class="content_header mdl-cell--hide-phone clearfix">
-					<div class="sort imit_select">
-						<button id="sort-lower-left" class="mdl-button mdl-js-button">
-							<i class="material-icons fleft">keyboard_arrow_down</i><span class="selected_sort select_fild">По рейтингу</span>
-						</button>
-						<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="sort-lower-left">
-							<li class="mdl-menu__item active">По рейтингу</li>
-							<li class="mdl-menu__item">Новинки</li>
-							<li class="mdl-menu__item">Популярные</li>
-							<li class="mdl-menu__item">От дешевых к дорогим</li>
-						</ul>
+				<div class="catalog_btn mdl-cell--hide-phone">Каталог<i class="material-icons">keyboard_arrow_down</i></div>
+				<h1>Стул Аргенто хром (Argento chrome) на металлическойна хромированной раме, цвета в ассортименте, пр-во "Новый стиль"</h1>
+				<div class="product mdl-grid">
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+						<p class="product_article">Арт: 109742</p>
+						<div class="product_main_img open_modal mdl-cell--hide-phone" data-target="big_photo">
+							<img src="images/product_image/original/86589.jpg" alt="">
+						</div>
+						<div id="owl-product_mini_img_js">
+							<div class="item"><img class="act_img" src="images/product_image/small/86589.jpg" alt=""></div>
+							<div class="item"><img src="images/product_image/small/86589-1.jpg" alt=""></div>
+							<div class="item"><img src="images/product_image/small/86589-2.jpg" alt=""></div>
+							<div class="item"><img src="images/product_image/small/86589.jpg" alt=""></div>
+							<div class="item"><img src="images/product_image/small/86589-1.jpg" alt=""></div>
+							<div class="item"><img src="images/product_image/small/86589-2.jpg" alt=""></div>
+						</div>
 					</div>
-					<div class="cart_info">
-						<div class="your_discount">Ваша скидка</div>
-						<div class="tabs_container">
-							<ul>
-								<li class="in_cart_block">
-									<a href="#" >20 товаров <span class="material-icons">shopping_cart</span></a>
-								</li>
-								<li>0%</li>
-								<li>10%</li>
-								<li>16%</li>
-								<li class="active">21%</li>
+  					<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+						<div class="content_header mdl-cell--hide-phone clearfix">
+							<div class="cart_info clearfix">
+								<div class="your_discount">Ваша скидка</div>
+								<div class="tabs_container">
+									<ul>
+										<li class="in_cart_block hidden">
+											<a href="#">20 товаров <span class="material-icons">shopping_cart</span></a>
+										</li>
+										<li>0%</li>
+										<li>10%</li>
+										<li>16%</li>
+										<li class="active">21%</li>
+									</ul>
+								</div>
+								<div class="order_balance">Еще заказать на <span class="summ">10000</span> грн.</div>
+								<div class="price_nav"></div>
+							</div>
+						</div>
+						<div class="pb_wrapper">
+							<div class="product_buy clearfix">
+								<p class="price">29000,34</p>
+								<div class="buy_block">
+									<div class="btn_remove">
+										<button class="mdl-button material-icons">remove</button>
+									</div>
+									<input type="text" class="qty_js" value="0">
+									<div class="btn_buy">
+										<button class="mdl-button mdl-js-button buy_btn_js" type="button">Купить</button>
+									</div>
+								</div>
+							</div>
+							<div class="apps_panel mdl-cell--hide-phone">
+								<ul>
+									<li><i class="material-icons" title="Добавить товар в избранное">favorite_border</i></li>
+									<li><i class="material-icons" title="Следить за ценой">trending_down</i></li>
+									<li><i class="material-icons" title="Поделиться">share</i></li>
+								</ul>
+							</div>
+						</div>
+						<div class="rating_block">
+							<ul class="rating_stars" title="Нет оценок">
+								<li><i class="material-icons">star</i></li>
+								<li><i class="material-icons">star</i></li>
+								<li><i class="material-icons">star_half</i></li>
+								<li><i class="material-icons">star_border</i></li>
+								<li><i class="material-icons">star_border</i></li>
 							</ul>
 						</div>
-						<div class="order_balance">Еще заказать на <span class="summ">10000</span> грн.</div>
-						<div class="price_nav"></div>
-					</div>
+						<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+							<div class="tabs mdl-tabs__tab-bar mdl-color--grey-100">
+								<a href="#description" class="mdl-tabs__tab is-active">Описание</a>
+								<a href="#specifications" class="mdl-tabs__tab">Характеристики</a>
+								<a href="#comments" class="mdl-tabs__tab">Отзывы и вопросы</a>
+								<a href="#seasonality" class="mdl-tabs__tab">Сезонность</a>
+							</div>
+							<div class="tab-content">
+								<div id="description" class="mdl-tabs__panel is-active">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores soluta at perspiciatis delectus alias iste repudiandae nisi cum odio nesciunt minima minus, quae distinctio animi dolorem vero recusandae ab, accusantium.
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis temporibus ut sapiente doloremque corrupti tempore quidem laudantium, esse est asperiores illum excepturi exercitationem ducimus facere numquam fugiat quia, fugit fuga.
+									</p>
+								</div>
+								<div id="specifications" class="mdl-tabs__panel">
+									<ul>
+										<li><span class="caption fleft">Тип:</span><span class="value fright">приманка</span></li>
+										<li><span class="caption fleft">Вид:</span><span class="value fright">зерновая</span></li>
+										<li><span class="caption fleft">Страна производитель:</span><span class="value fright">Украина</span></li>
+										<li><span class="caption fleft">Бренд:</span><span class="value fright">Щелкунчик</span></li>
+										<li><span class="caption fleft">Период действия:</span><span class="value fright">10-12 дней</span></li>
+										<li><span class="caption fleft">Примение:</span><span class="value fright">На открытом воздухе или внутри помещения</span></li>
+										<li><span class="caption fleft">Аромат:</span><span class="value fright">арахис и карамель</span></li>
+									</ul>
+								</div>
+								<div id="comments" class="mdl-tabs__panel">
+									<div class="feedback_form">
+										<h4>Оставить отзыв о товаре</h4>
+										<form action="" method="post" onsubmit="onCommentSubmit()">
+											<div class="feedback_stars">
+												<label class="label_for_stars">Оценка:</label>
+												<label>
+													<input type="radio" name="rating" class="set_rating hidden" value="1">
+													<i class="material-icons">star_border</i>
+												</label>
+												<label>
+													<input type="radio" name="rating" class="set_rating hidden" value="2">
+													<i class="material-icons">star_border</i>
+												</label>
+												<label>
+													<input type="radio" name="rating" class="set_rating hidden" value="3">
+													<i class="material-icons">star_border</i>
+												</label>
+												<label>
+													<input type="radio" name="rating" class="set_rating hidden" value="4">
+													<i class="material-icons">star_border</i>
+												</label>
+												<label>
+													<input type="radio" name="rating" class="set_rating hidden" value="5">
+													<i class="material-icons">star_border</i>
+												</label>
+											</div>
+											<label for="feedback_text">Отзыв:</label>
+											<textarea name="feedback_text" id="feedback_text" cols="30" rows="10" required></textarea>
+											<div class="user_data">
+												<div class="fild_wrapp">
+													<label for="feedback_author">Ваше имя:</label>
+													<input type="text" name="feedback_author" id="feedback_author" required value="">
+												</div>
+												<div class="fild_wrapp">
+													<label for="feedback_authors_email">Эл.почта:</label>
+													<input type="email" name="feedback_authors_email" id="feedback_authors_email" required value="">
+												</div>
+											</div>
+											<button type="submit" name="sub_com" class="mdl-button mdl-js-button">Отправить отзыв</button>
+										</form>
+									</div>
+									<div class="feedback_container">
+										<span class="feedback_author">Аноним</span>
+										<span class="feedback_date"><i class="material-icons">query_builder</i> 23.11.2015</span>
+										<div class="feedback_rating">
+											Оценка товара:
+											<ul class="rating_stars" title="Нет оценок">
+												<li><i class="material-icons">star</i></li>
+												<li><i class="material-icons">star</i></li>
+												<li><i class="material-icons">star_half</i></li>
+												<li><i class="material-icons">star_border</i></li>
+												<li><i class="material-icons">star_border</i></li>
+											</ul>
+										</div>
+										<p class="feedback_comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolore fugit dolorem quod, nulla dicta eum, sapiente itaque accusantium eaque id praesentium quibusdam nihil impedit voluptatibus fuga explicabo adipisci hic?</p>
+									</div>
+								</div>
+								<div id="seasonality" class="mdl-tabs__panel">
+									График
+								</div>
+							</div>
+						</div>
+  					</div>
 				</div>
-				<div class="products">
-					<div class="card clearfix">
-						<div class="product_photo">
-							<a href="#">
-								<img src="images/photo.jpg" height="100" width="100" alt="">
-							</a>
-						</div>
-						<p class="product_name"><a href="/product.html">Игрушка детская «Веселый поезд»</a> <span class="product_article">Арт: 109742</span></p>
-						<div class="product_buy">
-							<p class="price">29000,34</p>
-							<div class="buy_block">
-								<div class="btn_remove">
-									<button class="mdl-button material-icons">remove</button>
-								</div>
-								<input type="text" class="qty_js" value="0">
-								<div class="btn_buy">
-									<button class="mdl-button mdl-js-button buy_btn_js" type="button">Купить</button>
-								</div>
+				<section class="sliders">
+					<div class="slider_products">
+						<h4>Сопутствующие товары</h4>
+						<div id="owl-accompanying" class="owl-carousel">
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
 							</div>
-						</div>
-						<div class="product_info clearfix">
-							<div class="note clearfix">
-								<textarea placeholder="Примечание: "></textarea>
-								<label class="info_key">?</label>
-								<div class="info_description">
-									<p>Поле для ввода примечания к товару.</p>
-								</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
 							</div>
-						</div>
-					</div>
-					<div class="card clearfix">
-						<div class="product_photo">
-							<a href="#">
-								<img src="images/photo.jpg" height="100" width="100" alt="">
-							</a>
-						</div>
-						<p class="product_name"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iure, sint voluptatibus aliquam nobis pariatur voluptas vel ullam! Incidunt fugit provident temporibus, excepturi sint assumenda harum velit nesciunt veniam, quidem.</a> <span class="product_article">Арт: 109742</span></p>
-						<div class="product_buy">
-							<p class="price">29000,34</p>
-							<div class="buy_block">
-								<div class="btn_remove">
-									<button class="mdl-button material-icons">remove</button>
-								</div>
-								<input type="text" class="qty_js" value="0">
-								<div class="btn_buy">
-									<button class="mdl-button mdl-js-button buy_btn_js" type="button"><i class="material-icons">add</i></button>
-								</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
 							</div>
-						</div>
-						<div class="product_info clearfix">
-							<div class="note in_cart clearfix">
-								<textarea placeholder="Примечание: "></textarea>
-								<label class="info_key">?</label>
-								<div class="info_description">
-									<p>Поле для ввода примечания к товару.</p>
-								</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
 							</div>
 						</div>
 					</div>
-					<div class="card clearfix">
-						<div class="product_photo">
-							<a href="#">
-								<img src="images/photo.jpg" height="100" width="100" alt="">
-							</a>
-						</div>
-						<p class="product_name"><a href="#">Игрушка детская «Веселый поезд»</a> <span class="product_article">Арт: 109742</span></p>
-						<div class="product_buy">
-							<p class="price">29,34</p>
-							<div class="buy_block">
-								<div class="btn_remove">
-									<button class="mdl-button material-icons">remove</button>
-								</div>
-								<input type="text" class="qty_js" value="0">
-								<div class="btn_buy">
-									<button class="mdl-button mdl-js-button buy_btn_js" type="button"><i class="material-icons">add</i></button>
-								</div>
+					<div class="slider_products">
+						<h4>Популярные товары</h4>
+						<div id="owl-popular" class="owl-carousel">
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
 							</div>
-						</div>
-						<div class="product_info clearfix">
-							<div class="note in_cart clearfix">
-								<textarea class="required" placeholder="Примечание: обязательно"></textarea>
-								<label class="info_key">?</label>
-								<div class="info_description">
-									<p>Поле для ввода примечания к товару.</p>
-								</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/46842.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">65 грн.</div>
+								</a>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="show_more mdl-cell--hide-phone"><a href="#">Показать еще 30 товаров</a></div>
-				<div class="paginator">
-					<ul>
-						<li class="active"><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-					</ul>
-				</div>
+					<div class="slider_products">
+						<h4>Просмотренные товары</h4>
+						<div id="owl-last-viewed" class="owl-carousel">
+							<div class="item">
+								<a href="#">
+									<img src="images/25037.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">5656 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/25037.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">5656 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/25037.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">5656 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/25037.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">5656 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/25037.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">5656 грн.</div>
+								</a>
+							</div>
+							<div class="item">
+								<a href="#">
+									<img src="images/25037.jpg">
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+									<div class="ca-more">5656 грн.</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 			<footer class="mdl-mega-footer mdl-color--grey-100 clearfix">
 				<div class="mdl-mega-footer__left-section clearfix">
@@ -703,5 +844,6 @@
 			</footer>
 		</section>
 	</section>
+	<div id="big_photo" class="modal_hidden"></div>
 </body>
 </html>
