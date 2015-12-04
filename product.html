@@ -8,13 +8,15 @@
 	<link rel="stylesheet" href="plugins/material/material.css">
 	<link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/product.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="plugins/material/material.js"></script>
 	<script src="plugins/owl-carousel/owl.carousel.min.js"></script>
 	<script src="js/func.js"></script>
@@ -22,7 +24,7 @@
 </head>
 <body class="banner_hidden">
 	<div class="background_panel"></div>
-	<header class="default">
+	<header id="header_js" class="default" data-type="search">
 		<div class="header_wrapp clearfix">
 			<div class="logo">
 				<a href=""><img src="images/Logo.svg" alt="Оптовый торговый центр xt.ua"></a>
@@ -32,7 +34,7 @@
 				<form action="">
 					<div class="mdl-textfield mdl-js-textfield search">
 							<i class="material-icons mob_s_btn">search</i>
-							<input class="mdl-textfield__input" type="search" id="search">
+							<input class="mdl-textfield__input btn_js" type="search" id="search" data-name="header_js">
 							<label class="mdl-textfield__label" for="search">Найти...</label>
 							<i class="material-icons search_close" title="Закрыть поиск">close</i>
 						<div class="select_category fright mdl-cell--hide-phone imit_select">
@@ -69,30 +71,30 @@
 				<li><button class="mdl-button mdl-js-button enter_btn">Войти</button></li>
 			</ul>
 			<nav class="phone_menu">
-				<span class="material-icons menu">menu</span>
+				<span class="material-icons menu btn_js" data-name="phone_menu">menu</span>
 				<a href="#" class="material-icons mdl-badge mdl-badge--overlap cart" data-badge="0">shopping_cart</a>
 			</nav>
 		</div>
-		<div class="panel" data-name="phone_menu">
-			<ul class="phone_nav">
-				<li><a href="#">Скидки</a></li>
-				<li><a href="#">Каталог</a></li>
-				<li><a href="#">Фильтры</a></li>
-				<li><a href="#">Снабжение организаций</a></li>
-				<li><a href="#">Поставки магазинам</a></li>
-				<li><a href="#">Новости</a></li>
-				<li><a href="#">Часто задаваемые вопросы</a></li>
-				<li><a href="#">Книга жалоб и предложений</a></li>
-			</ul>
-			<ul class="phone_nav_contacts clearfix">
-				<li class="parent_nav"><div class="material-icons">phone</div><span>(063) 225-91-83</span></li>
-				<li><span>(099) 228-69-38</span></li>
-				<li><span>(093) 322-91-83</span></li>
-				<li class="parent_nav"><div class="material-icons">mail</div><span>administration@x-torg.com</span></li>
-				<li class="parent_nav"><div class="material-icons">location_on</div><span>г. Харьков, ТЦ Барабашово, Площадка Свояк, Торговое Место 130</span></li>
-			</ul>
-		</div>
 	</header>
+	<div id="phone_menu" class="panel" data-type="panel">
+		<ul class="phone_nav">
+			<li><a href="#">Скидки</a></li>
+			<li><a href="#">Каталог</a></li>
+			<li><a href="#">Фильтры</a></li>
+			<li><a href="#">Снабжение организаций</a></li>
+			<li><a href="#">Поставки магазинам</a></li>
+			<li><a href="#">Новости</a></li>
+			<li><a href="#">Часто задаваемые вопросы</a></li>
+			<li><a href="#">Книга жалоб и предложений</a></li>
+		</ul>
+		<ul class="phone_nav_contacts clearfix">
+			<li class="parent_nav"><div class="material-icons">phone</div><span>(063) 225-91-83</span></li>
+			<li><span>(099) 228-69-38</span></li>
+			<li><span>(093) 322-91-83</span></li>
+			<li class="parent_nav"><div class="material-icons">mail</div><span>administration@x-torg.com</span></li>
+			<li class="parent_nav"><div class="material-icons">location_on</div><span>г. Харьков, ТЦ Барабашово, Площадка Свояк, Торговое Место 130</span></li>
+		</ul>
+	</div>
 	<section class="banner">
 		<div id="owl-main_slider" class="owl-carousel">
 			<a class="item" href="#">
@@ -109,406 +111,410 @@
 			</a>
 		</div>
 	</section>
-	<section class="main">
-		<aside class="mdl-color--grey-100 mdl-cell--hide-phone hidden">
-			<div class="sidebar_wrapp">
-				<div class="catalog">
-					<ul class="main_nav">
-						<li data-nav="organization">
-							<i class="material-icons">work</i>Для организаций
-							<label class="info_key">?</label>
-							<div class="info_description">
-								<p>Поле для ввода примечания к товару.</p>
-							</div>
-						</li>
-						<li data-nav="store">
-							<i class="material-icons">store</i>Для магазинов
-							<label class="info_key">?</label>
-							<div class="info_description">
-								<p>Поле для ввода примечания к товару.</p>
-							</div>
-						</li>
-						<li class="active" data-nav="all_section">
-							<i class="material-icons">list</i>Все разделы
-							<label class="info_key">?</label>
-							<div class="info_description">
-								<p>Поле для ввода примечания к товару.</p>
-							</div>
-						</li>
-						<li data-nav="filter"><i class="material-icons">filter_list</i><span class="title">Фильтры</span><span class="included_filters">(активно 10)</span></li>
-					</ul>
-					<ul class="second_nav" data-lvl="1">
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Новогодние игрушки</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-							<ul data-lvl="2">
-								<li>
-									<span class="link_wrapp">
-										<a href="#">Канцтовары</a>
-									</span>
-								</li>
-								<li>
-									<span class="link_wrapp">
-										<a href="#">Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-									</span>
-									<ul data-lvl="3">
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Канцтовары</a><span class="qnt_products">323</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Системы охраны и видеонаблюдения</a><span class="qnt_products">345</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Lorem ipsum dolor.</a><span class="qnt_products">657</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Lorem ipsum.</a><span class="qnt_products">5675</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">lorem</a><span class="qnt_products">34533</span>
-											</span>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<span class="link_wrapp">
-										<a href="#">Lorem ipsum dolor.</a>
-									</span>
-								</li>
-								<li>
-									<span class="link_wrapp">
-										<a href="#">Lorem ipsum.</a>
-									</span>
-								</li>
-								<li>
-									<span class="link_wrapp">
-										<a href="#">lorem</a>
-									</span>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Дом, сад, быт</a>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Детский мир, игрушки</a>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Инструмент, стройка</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-							<ul data-lvl="2">
-								<li>
-									<span class="link_wrapp">
-										<a href="#">Канцтовары</a>
-									</span>
-								</li>
-								<li>
-									<span class="link_wrapp">
-										<a href="#">Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-									</span>
-									<ul data-lvl="3">
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Канцтовары</a><span class="qnt_products">323</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Системы охраны и видеонаблюдения</a><span class="qnt_products">345</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Lorem ipsum dolor.</a><span class="qnt_products">657</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Lorem ipsum.</a><span class="qnt_products">5675</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">lorem</a><span class="qnt_products">34533</span>
-											</span>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<span class="link_wrapp">
-										<a href="#">Lorem ipsum dolor.</a><span class="more_cat"></span>
-									</span>
-								</li>
-								<li>
-									<span class="link_wrapp">
-										<a href="#">Lorem ipsum.</a><span class="more_cat"></span>
-									</span>
-								</li>
-								<li>
-									<span class="link_wrapp">
-										<a href="#">lorem</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-									</span>
-									<ul data-lvl="3">
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Канцтовары</a><span class="qnt_products">323</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Системы охраны и видеонаблюдения</a><span class="qnt_products">345</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Lorem ipsum dolor.</a><span class="qnt_products">657</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">Lorem ipsum.</a><span class="qnt_products">5675</span>
-											</span>
-										</li>
-										<li>
-											<span class="link_wrapp">
-												<a href="#">lorem</a><span class="qnt_products">34533</span>
-											</span>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Парфюмерия</a>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Новогодние игрушки</a>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Детский мир, игрушки</a>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Инструмент, стройка</a>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Парфюмерия, галантерея</a>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Одежда, текстиль</a>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Подарки, приколы</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Туризм, рыбалка, мото, вело</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-						</li>
-						<li>
-							<span class="link_wrapp">
-								<a href="#">Туризм, рыбалка, мото, вело</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
-							</span>
-						</li>
-					</ul>
-				</div>
-				<div class="news">
-					<h4>Новости</h4>
-					<div class="news_container">
-						<div class="dl">
-							<a href="#" class="news_title" title="Читать новость">Suspendisse vitae ultricies</a>
-							<div class="published_date">Опубликовано: 11.12.13</div>
-							<p class="descr_short">
-								<img src="images/Карнавальные костюмы М.jpg" height="121" width="202" alt="">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum rerum eos deleniti corporis inventore libero, vitae adipisci qui tenetur dolorem alias ad veniam, voluptatum cupiditate quia accusamus. Omnis, ab, repudiandae.
-							</p>
+	<aside id="catalog" class="mdl-color--grey-100 mdl-cell--hide-phone" data-type="panel">
+		<div class="sidebar_wrapp">
+			<div class="catalog">
+				<ul class="main_nav">
+					<li data-nav="organization">
+						<i class="material-icons">work</i>Для организаций
+						<label class="info_key">?</label>
+						<div class="info_description">
+							<p>Поле для ввода примечания к товару.</p>
 						</div>
-						<a href="#" class="fright">Все новости</a>
-					</div>
+					</li>
+					<li data-nav="store">
+						<i class="material-icons">store</i>Для магазинов
+						<label class="info_key">?</label>
+						<div class="info_description">
+							<p>Поле для ввода примечания к товару.</p>
+						</div>
+					</li>
+					<li class="active" data-nav="all_section">
+						<i class="material-icons">list</i>Все разделы
+						<label class="info_key">?</label>
+						<div class="info_description">
+							<p>Поле для ввода примечания к товару.</p>
+						</div>
+					</li>
+					<li data-nav="filter"><i class="material-icons">filter_list</i><span class="title">Фильтры</span><span class="included_filters">(активно 10)</span></li>
+				</ul>
+				<ul class="second_nav" data-lvl="1">
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Новогодние игрушки</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+						<ul data-lvl="2">
+							<li>
+								<span class="link_wrapp">
+									<a href="#">Канцтовары</a>
+								</span>
+							</li>
+							<li>
+								<span class="link_wrapp">
+									<a href="#">Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+								</span>
+								<ul data-lvl="3">
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Канцтовары</a><span class="qnt_products">323</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Системы охраны и видеонаблюдения</a><span class="qnt_products">345</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Lorem ipsum dolor.</a><span class="qnt_products">657</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Lorem ipsum.</a><span class="qnt_products">5675</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">lorem</a><span class="qnt_products">34533</span>
+										</span>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<span class="link_wrapp">
+									<a href="#">Lorem ipsum dolor.</a>
+								</span>
+							</li>
+							<li>
+								<span class="link_wrapp">
+									<a href="#">Lorem ipsum.</a>
+								</span>
+							</li>
+							<li>
+								<span class="link_wrapp">
+									<a href="#">lorem</a>
+								</span>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Дом, сад, быт</a>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Детский мир, игрушки</a>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Инструмент, стройка</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+						<ul data-lvl="2">
+							<li>
+								<span class="link_wrapp">
+									<a href="#">Канцтовары</a>
+								</span>
+							</li>
+							<li>
+								<span class="link_wrapp">
+									<a href="#">Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+								</span>
+								<ul data-lvl="3">
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Канцтовары</a><span class="qnt_products">323</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Системы охраны и видеонаблюдения</a><span class="qnt_products">345</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Lorem ipsum dolor.</a><span class="qnt_products">657</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Lorem ipsum.</a><span class="qnt_products">5675</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">lorem</a><span class="qnt_products">34533</span>
+										</span>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<span class="link_wrapp">
+									<a href="#">Lorem ipsum dolor.</a><span class="more_cat"></span>
+								</span>
+							</li>
+							<li>
+								<span class="link_wrapp">
+									<a href="#">Lorem ipsum.</a><span class="more_cat"></span>
+								</span>
+							</li>
+							<li>
+								<span class="link_wrapp">
+									<a href="#">lorem</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+								</span>
+								<ul data-lvl="3">
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Канцтовары</a><span class="qnt_products">323</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Системы охраны и видеонаблюдения</a><span class="qnt_products">345</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Lorem ipsum dolor.</a><span class="qnt_products">657</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">Lorem ipsum.</a><span class="qnt_products">5675</span>
+										</span>
+									</li>
+									<li>
+										<span class="link_wrapp">
+											<a href="#">lorem</a><span class="qnt_products">34533</span>
+										</span>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Парфюмерия</a>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Новогодние игрушки</a>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Детский мир, игрушки</a>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Инструмент, стройка</a>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Парфюмерия, галантерея</a>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Одежда, текстиль</a>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Канцтовары</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Подарки, приколы</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Туризм, рыбалка, мото, вело</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+					</li>
+					<li>
+						<span class="link_wrapp">
+							<a href="#">Туризм, рыбалка, мото, вело</a><span class="more_cat"><i class="material-icons">keyboard_arrow_right</i></span>
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="filters">
+				<div class="filter_block">
+					<p>Сезонные товары</p>
+					<ul>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Новый год</span>
+								<span class="qnt_products fright">201</span>
+							</label>
+						</li>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Снег</span>
+								<span class="qnt_products fright">2222</span>
+							</label>
+						</li>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Дождь</span>
+								<span class="qnt_products fright">224</span>
+							</label>
+						</li>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Град</span>
+								<span class="qnt_products fright">23</span>
+							</label>
+						</li>
+					</ul>
 				</div>
-				<div class="filters">
-					<div class="filter_block">
-						<p>Сезонные товары</p>
-						<ul>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Новый год</span>
-									<span class="qnt_products fright">201</span>
-								</label>
-							</li>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Снег</span>
-									<span class="qnt_products fright">2222</span>
-								</label>
-							</li>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Дождь</span>
-									<span class="qnt_products fright">224</span>
-								</label>
-							</li>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Град</span>
-									<span class="qnt_products fright">23</span>
-								</label>
-							</li>
-						</ul>
-					</div>
-					<div class="filter_block">
-						<p>Сезонные товары</p>
-						<ul>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Новый год</span>
-									<span class="qnt_products fright">201</span>
-								</label>
-							</li>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Снег</span>
-									<span class="qnt_products fright">2222</span>
-								</label>
-							</li>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Дождь</span>
-									<span class="qnt_products fright">224</span>
-								</label>
-							</li>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Град</span>
-									<span class="qnt_products fright">23</span>
-								</label>
-							</li>
-						</ul>
-					</div>
-					<div class="filter_block">
-						<p>Сезонные товары</p>
-						<ul>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Новый год</span>
-									<span class="qnt_products fright">201</span>
-								</label>
-							</li>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Снег</span>
-									<span class="qnt_products fright">2222</span>
-								</label>
-							</li>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Дождь</span>
-									<span class="qnt_products fright">224</span>
-								</label>
-							</li>
-							<li>
-								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-									<input type="checkbox" class="mdl-checkbox__input">
-									<span class="mdl-checkbox__label">Град</span>
-									<span class="qnt_products fright">23</span>
-								</label>
-							</li>
-						</ul>
-					</div>
+				<div class="filter_block">
+					<p>Сезонные товары</p>
+					<ul>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Новый год</span>
+								<span class="qnt_products fright">201</span>
+							</label>
+						</li>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Снег</span>
+								<span class="qnt_products fright">2222</span>
+							</label>
+						</li>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Дождь</span>
+								<span class="qnt_products fright">224</span>
+							</label>
+						</li>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Град</span>
+								<span class="qnt_products fright">23</span>
+							</label>
+						</li>
+					</ul>
+				</div>
+				<div class="filter_block">
+					<p>Сезонные товары</p>
+					<ul>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Новый год</span>
+								<span class="qnt_products fright">201</span>
+							</label>
+						</li>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Снег</span>
+								<span class="qnt_products fright">2222</span>
+							</label>
+						</li>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Дождь</span>
+								<span class="qnt_products fright">224</span>
+							</label>
+						</li>
+						<li>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Град</span>
+								<span class="qnt_products fright">23</span>
+							</label>
+						</li>
+					</ul>
 				</div>
 			</div>
-		</aside>
-		<section class="center product_page">
+		</div>
+		<div class="catalog_close btn_js" data-name="catalog">
+			<i class="material-icons" title="Закрыть каталог">close</i>
+		</div>
+	</aside>
+	<section class="main product_page">
+		<section class="center">
 			<div class="content">
-				<div class="catalog_btn mdl-cell--hide-phone">Каталог<i class="material-icons">keyboard_arrow_down</i></div>
+				<div class="breadcrumbs_wrapp clearfix">
+					<div class="catalog_btn mdl-cell--hide-phone btn_js" data-name="catalog">Каталог<i class="material-icons">keyboard_arrow_right</i></div>
+					<ul id="breadcrumbs" class="clearfix">
+						<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="/" itemprop="url"><span itemprop="title">Главная</span></a>
+							<i class="material-icons">keyboard_arrow_right</i>
+						</li>
+						<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="#" itemprop="url"><span itemprop="title">Новогодние игрушки, елки</span></a>
+							<i class="material-icons">keyboard_arrow_right</i>
+						</li>
+						<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="#" itemprop="url"><span itemprop="title">Искусственные елки, сосны</span></a>
+						</li>
+					</ul>
+				</div>
 				<h1>Стул Аргенто хром (Argento chrome) на металлическойна хромированной раме, цвета в ассортименте, пр-во "Новый стиль"</h1>
 				<div class="product mdl-grid">
 					<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
 						<p class="product_article">Арт: 109742</p>
-						<div class="product_main_img open_modal mdl-cell--hide-phone" data-target="big_photo">
-							<img src="images/product_image/original/86589.jpg" alt="">
+						<div class="product_main_img btn_js mdl-cell--hide-phone" data-name="big_photo">
+							<img src="images/product_image/original/86589.jpg" alt="dfgd">
 						</div>
 						<div id="owl-product_mini_img_js">
 							<div class="item"><img class="act_img" src="images/product_image/small/86589.jpg" alt=""></div>
-							<div class="item"><img src="images/product_image/small/86589-1.jpg" alt=""></div>
-							<div class="item"><img src="images/product_image/small/86589-2.jpg" alt=""></div>
-							<div class="item"><img src="images/product_image/small/86589.jpg" alt=""></div>
-							<div class="item"><img src="images/product_image/small/86589-1.jpg" alt=""></div>
-							<div class="item"><img src="images/product_image/small/86589-2.jpg" alt=""></div>
+							<div class="item"><img src="images/product_image/small/86589-1.jpg" alt="gdfg"></div>
+							<div class="item"><img src="images/product_image/small/86589-2.jpg" alt="dfg"></div>
+							<div class="item"><img src="images/product_image/small/86589.jpg" alt="dfg"></div>
+							<div class="item"><img src="images/product_image/small/86589-1.jpg" alt="dg"></div>
+							<div class="item"><img src="images/product_image/small/86589-2.jpg" alt="dfg"></div>
 						</div>
 					</div>
   					<div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
@@ -564,8 +570,8 @@
 							<div class="tabs mdl-tabs__tab-bar mdl-color--grey-100">
 								<a href="#description" class="mdl-tabs__tab is-active">Описание</a>
 								<a href="#specifications" class="mdl-tabs__tab">Характеристики</a>
-								<a href="#comments" class="mdl-tabs__tab">Отзывы и вопросы</a>
 								<a href="#seasonality" class="mdl-tabs__tab">Сезонность</a>
+								<a href="#comments" class="mdl-tabs__tab">Отзывы и вопросы</a>
 							</div>
 							<div class="tab-content">
 								<div id="description" class="mdl-tabs__panel is-active">
@@ -585,6 +591,9 @@
 										<li><span class="caption fleft">Аромат:</span><span class="value fright">арахис и карамель</span></li>
 									</ul>
 								</div>
+								<div id="seasonality" class="mdl-tabs__panel">
+									График
+								</div>
 								<div id="comments" class="mdl-tabs__panel">
 									<div class="feedback_form">
 										<h4>Оставить отзыв о товаре</h4>
@@ -593,27 +602,27 @@
 												<label class="label_for_stars">Оценка:</label>
 												<label>
 													<input type="radio" name="rating" class="set_rating hidden" value="1">
-													<i class="material-icons">star_border</i>
+													<i class="star material-icons">star_border</i>
 												</label>
 												<label>
 													<input type="radio" name="rating" class="set_rating hidden" value="2">
-													<i class="material-icons">star_border</i>
+													<i class="star material-icons">star_border</i>
 												</label>
 												<label>
 													<input type="radio" name="rating" class="set_rating hidden" value="3">
-													<i class="material-icons">star_border</i>
+													<i class="star material-icons">star_border</i>
 												</label>
 												<label>
 													<input type="radio" name="rating" class="set_rating hidden" value="4">
-													<i class="material-icons">star_border</i>
+													<i class="star material-icons">star_border</i>
 												</label>
 												<label>
 													<input type="radio" name="rating" class="set_rating hidden" value="5">
-													<i class="material-icons">star_border</i>
+													<i class="star material-icons">star_border</i>
 												</label>
 											</div>
 											<label for="feedback_text">Отзыв:</label>
-											<textarea name="feedback_text" id="feedback_text" cols="30" rows="10" required></textarea>
+											<textarea name="feedback_text" id="feedback_text" cols="30" required></textarea>
 											<div class="user_data">
 												<div class="fild_wrapp">
 													<label for="feedback_author">Ваше имя:</label>
@@ -642,9 +651,6 @@
 										</div>
 										<p class="feedback_comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita dolore fugit dolorem quod, nulla dicta eum, sapiente itaque accusantium eaque id praesentium quibusdam nihil impedit voluptatibus fuga explicabo adipisci hic?</p>
 									</div>
-								</div>
-								<div id="seasonality" class="mdl-tabs__panel">
-									График
 								</div>
 							</div>
 						</div>
@@ -844,6 +850,8 @@
 			</footer>
 		</section>
 	</section>
-	<div id="big_photo" class="modal_hidden"></div>
+	<div id="big_photo" data-type="modal">
+		<img src="" alt="">
+	</div>
 </body>
 </html>

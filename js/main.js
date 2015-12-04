@@ -62,10 +62,10 @@ $(function(){
 	// });
 
 	// Фокусировка Search
-	$('#search').on('focus', function() {
-		$('html').css('overflow-y', 'scroll');
-		$('body').addClass('active_search');
-	});
+	// $('#search').on('focus', function() {
+	// 	$('html').css('overflow-y', 'scroll');
+	// 	$('body').addClass('active_search');
+	// });
 	// Активация кнопки поиска при вводе
 	$('#search').on('keyup', function() {
 		var val = $(this).val();
@@ -99,35 +99,26 @@ $(function(){
 			panel_height = viewport_height - indent;
 		if(action == 'menu'){
 			$(this).html('close');
-			$('.panel[data-name="phone_menu"]').height(panel_height);
-			$('body').addClass('active_panel');
+			// $('.panel[data-type="panel"]').css('display', 'block').height(panel_height);
+			// $('body').addClass('active_panel');
 		}else{
 			$(this).html('menu');
-			$('body').removeClass('active_panel');
+			// $('.panel[data-type="panel"]').height(0);
+			// $('body').removeClass('active_panel');
 		}
-		$('.panel[data-name="phone_menu"]').stop(true, true).slideToggle();
-	});
-
-	//Закрытие меню при клике на подложку
-	$('body').on('click', '.background_panel', function(){
-		//Удаление всех классов у body которые начинаются на active_
-		$('body').removeClass(function(index, css){
-			return (css.match(/(^|\s)active_\S+/g) || []).join(' ');
-		});
-		$('.menu').html('menu');
-		$('.panel').stop(true, true).slideUp();
 	});
 
 	//Закрытие search mobile
 	$('.search_close').on('click', function(){
-		$('body').removeClass('active_search');
+		closeObject();
 	});
 
 	//Scroll Magic
 	var header = $("header"),
-		over_scroll = false,
+		over_scroll = $('body').hasClass('banner_hidden')?true:false,
 		banner_height = $('.banner').outerHeight();
 		console.log('banner_height - '+banner_height);
+		console.log(over_scroll);
 	$(window).scroll(function(){
 		if(banner_height == 0){
 			banner_height = $('.banner').outerHeight();
@@ -249,37 +240,110 @@ $(function(){
 		}
 	});
 
-	// Добавление кнопки Закрыть всем модальным окнам
-	$('[class^="modal_"]').append('<a href="#" class="material-icons close_modal">close</a>');
-
-	// Открытие модального окна
-	$('.open_modal').on('click', function(event){
-		var target = $(this).data('target'),
-			data_confirm = $(this).attr('data-confirm');
-		event.preventDefault();
-		if(data_confirm === undefined || data_confirm == ''){
-			openModal(target);
-		}else{
-			if(!confirm(data_confirm)){
-				return false;
+	//Raiting stars
+	$('.set_rating').on('change', function(){
+		var rating = $(this).val();
+		changestars(rating);
+	});
+	$('.star').hover(function(){
+		var rating = $(this).closest('label').find('input').val();
+		changestars(rating);
+		$('.feedback_stars').on('mouseleave', function(){
+			rating = $(this).find('input:checked').val();
+			if(!rating){
+				rating = 0;
 			}
-			openModal(target);
-		}
-		$('body').keydown(function(e){
-			if(e.keyCode == 27){
-				closeModal();
-				return false;
-			}
+			changestars(rating);
 		});
 	});
-
-	// Закрытие модального окна
-	$('#back_modal, .close_modal').on('click', function(event) {
-		event.preventDefault();
-		closeModal();
+	$('.star').on('click', function(e){
+		var input = $(this).closest('label').find('input');
+		if(input.is(":checked")){
+			e.preventDefault();
+			input.removeAttr('checked');
+			changestars(0);
+		}
 	});
 
-	$('.product_main_img').on('click', function() {
+	//Закрытие подложки и окон
+	$('body').on('click', '.background_panel', function(){
+		closeObject();
+	});
 
+	// Добавление кнопки Закрыть всем модальным окнам
+	$('[data-type="modal"]').each(function(index, el) {
+		$(this).append('<a href="#" class="material-icons close_modal btn_js" data-name="'+$(this).attr('id')+'">close</a>');
+	});
+
+	// Открытие модального окна
+	// $('.open_modal').on('click', function(event){
+	// 	var target = $(this).data('target'),
+	// 		data_confirm = $(this).attr('data-confirm');
+	// 	event.preventDefault();
+	// 	if(data_confirm === undefined || data_confirm == ''){
+	// 		openModal(target);
+	// 	}else{
+	// 		if(!confirm(data_confirm)){
+	// 			return false;
+	// 		}
+	// 		openModal(target);
+	// 	}
+	// 	$('body').keydown(function(e){
+	// 		if(e.keyCode == 27){
+	// 			closeModal();
+	// 			return false;
+	// 		}
+	// 	});
+	// });
+
+	// // Закрытие модального окна
+	// $('#back_modal, .close_modal').on('click', function(event) {
+	// 	event.preventDefault();
+	// 	closeModal();
+	// });
+
+	//Замена картинки для открытия в ориг размере
+	$('.product_main_img').on('click', function() {
+		var img_src = $(this).find('img').attr('src'),
+			img_alt = $(this).find('img').attr('alt');
+		$('#big_photo img').attr({
+			src: img_src,
+			alt: img_alt
+		}).css({
+			'max-height': (viewport_height - header_outerheight)*0.9,
+			'max-width': viewport_width*0.9
+		});
+
+	});
+	//Закрытие окна при клике на картинку
+	$('#big_photo img').on('click', function(){
+		closeObject();
+	});
+	//Открытие обьектов с подложкой
+	$('body').on('click', '.btn_js', function(){
+		var name = $(this).data('name');
+		if(name != undefined){
+			openObject(name);
+		}
+	});
+
+	//Обработка примечания
+	$('.note textarea').on('blur', function(){
+		$(this).css({
+			height: '30px'
+		});
+		// var id = $(this).closest('form.note').attr('data-note'),
+		// 	note = $(this).val();
+		// $.ajax({
+		// 	url: URL_base+'ajaxcart',
+		// 	type: "POST",
+		// 	cache: false,
+		// 	dataType : "json",
+		// 	data: {
+		// 		"action": "update_note",
+		// 		"id_product": id,
+		// 		"note": note
+		// 	}
+		// });
 	});
 });

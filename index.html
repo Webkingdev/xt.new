@@ -14,14 +14,16 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="plugins/material/material.js"></script>
 	<script src="plugins/owl-carousel/owl.carousel.min.js"></script>
+	<script src="js/func.js"></script>
 	<script src="js/main.js"></script>
 </head>
 <body>
 	<div class="background_panel"></div>
-	<header class="default">
+	<header id="header_js" class="default" data-type="search">
 		<div class="header_wrapp clearfix">
 			<div class="logo">
 				<a href=""><img src="images/Logo.svg" alt="Оптовый торговый центр xt.ua"></a>
@@ -31,7 +33,7 @@
 				<form action="">
 					<div class="mdl-textfield mdl-js-textfield search">
 							<i class="material-icons mob_s_btn">search</i>
-							<input class="mdl-textfield__input" type="search" id="search">
+							<input class="mdl-textfield__input btn_js" type="search" id="search" data-name="header_js">
 							<label class="mdl-textfield__label" for="search">Найти...</label>
 							<i class="material-icons search_close" title="Закрыть поиск">close</i>
 						<div class="select_category fright mdl-cell--hide-phone imit_select">
@@ -52,7 +54,7 @@
 				</form>
 			</div>
 			<ul class="header_nav mdl-cell--hide-phone">
-				<li><a href="#" class="checkout">Оформить заказ</a></li>
+				<li><a href="#" class="checkout btn_js" data-name="cart">Оформить заказ</a></li>
 				<li><a href="#">Поставки магазинам</a></li>
 				<li>
 					<button id="menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon navigation">
@@ -65,31 +67,12 @@
 						<li class="mdl-menu__item">Yet Another Action</li>
 					</ul>
 				</li>
-				<li><button class="mdl-button mdl-js-button enter_btn">Мой кабинет</button></li>
+				<li><button class="mdl-button mdl-js-button enter_btn">Войти</button></li>
 			</ul>
 			<nav class="phone_menu">
-				<span class="material-icons menu">menu</span>
+				<span class="material-icons menu btn_js" data-name="phone_menu">menu</span>
 				<a href="#" class="material-icons mdl-badge mdl-badge--overlap cart" data-badge="0">shopping_cart</a>
 			</nav>
-		</div>
-		<div class="panel" data-name="phone_menu">
-			<ul class="phone_nav">
-				<li><a href="#">Скидки</a></li>
-				<li><a href="#">Каталог</a></li>
-				<li><a href="#">Фильтры</a></li>
-				<li><a href="#">Снабжение организаций</a></li>
-				<li><a href="#">Поставки магазинам</a></li>
-				<li><a href="#">Новости</a></li>
-				<li><a href="#">Часто задаваемые вопросы</a></li>
-				<li><a href="#">Книга жалоб и предложений</a></li>
-			</ul>
-			<ul class="phone_nav_contacts clearfix">
-				<li class="parent_nav"><div class="material-icons">phone</div><span>(063) 225-91-83</span></li>
-				<li><span>(099) 228-69-38</span></li>
-				<li><span>(093) 322-91-83</span></li>
-				<li class="parent_nav"><div class="material-icons">mail</div><span>administration@x-torg.com</span></li>
-				<li class="parent_nav"><div class="material-icons">location_on</div><span>г. Харьков, ТЦ Барабашово, Площадка Свояк, Торговое Место 130</span></li>
-			</ul>
 		</div>
 	</header>
 	<section class="banner">
@@ -543,7 +526,7 @@
 						<div class="tabs_container">
 							<ul>
 								<li class="in_cart_block">
-									<a href="#" >20 товаров <span class="material-icons">shopping_cart</span></a>
+									<a href="#" class="btn_js" data-name="cart">20 товаров <span class="material-icons">shopping_cart</span></a>
 								</li>
 								<li>0%</li>
 								<li>10%</li>
@@ -703,5 +686,181 @@
 			</footer>
 		</section>
 	</section>
+	<div id="cart" data-type="modal">
+		<h5>Корзина</h5>
+		<div class="order_wrapp">
+			<div>
+				<i class="material-icons remove_prod">highlight_off</i>
+				<div class="product_photo">
+					<a href="#">
+						<img src="images/photo.jpg" height="100" width="100" alt="">
+					</a>
+				</div>
+				<p class="product_name"><a href="#">Игрушка детская «Веселый поезд»</a> <span class="product_article">Арт: 109742</span></p>
+				<div class="product_buy">
+					<p class="price">29000,34</p>
+					<p class="summ">сумма <span>29000,34</span></p>
+					<div class="buy_block">
+						<div class="btn_remove">
+							<button class="mdl-button material-icons">remove</button>
+						</div>
+						<input type="text" class="qty_js" value="0">
+						<div class="btn_buy">
+							<button class="mdl-button mdl-js-button buy_btn_js" type="button"><i class="material-icons">add</i></button>
+						</div>
+					</div>
+					<div class="note in_cart clearfix">
+						<textarea placeholder="Примечание: "></textarea>
+						<label class="info_key">?</label>
+						<div class="info_description">
+							<p>Поле для ввода примечания к товару.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="table_wrapp">
+			<table width="100%">
+				<colgroup>
+					<col width="5%">
+					<col width="5%">
+					<col width="7%">
+					<col width="10%">
+					<col width="41%">
+					<col width="7%">
+					<col width="18%">
+					<col width="7%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th></th>
+						<th>№</th>
+						<th>Артикул</th>
+						<th>Фото</th>
+						<th>Название</th>
+						<th>Цена</th>
+						<th>Количество</th>
+						<th>Сумма</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="product_buy">
+						<td>
+							<i class="material-icons remove_prod">highlight_off</i>
+						</td>
+						<td>888</td>
+						<td>
+							<span class="product_article">109742</span>
+						</td>
+						<td>
+							<div class="product_photo">
+								<a href="#">
+									<img src="images/photo.jpg" height="100" width="100" alt="">
+								</a>
+							</div>
+						</td>
+						<td >
+							<p class="product_name"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iure, sint voluptatibus aliquam nobis pariatur voluptas vel ullam! Incidunt fugit provident temporibus, excepturi sint assumenda harum velit nesciunt veniam, quidem.</a></p>
+							<div class="note clearfix">
+								<textarea placeholder="Примечание: "></textarea>
+								<label class="info_key">?</label>
+								<div class="info_description">
+									<p>Поле для ввода примечания к товару.</p>
+								</div>
+							</div>
+						</td>
+						<td><p class="price">29000,34</p></td>
+						<td>
+							<div class="buy_block">
+								<div class="btn_remove">
+									<button class="mdl-button material-icons">remove</button>
+								</div>
+								<input type="text" class="qty_js" value="0">
+								<div class="btn_buy">
+									<button class="mdl-button mdl-js-button buy_btn_js" type="button"><i class="material-icons">add</i></button>
+								</div>
+							</div>
+						</td>
+						<td class="summ">23000,99</td>
+					</tr>
+					<tr class="product_buy">
+						<td>
+							<i class="material-icons remove_prod">highlight_off</i>
+						</td>
+						<td>888</td>
+						<td>
+							<span class="product_article">109742</span>
+						</td>
+						<td>
+							<div class="product_photo">
+								<a href="#">
+									<img src="images/photo.jpg" height="100" width="100" alt="">
+								</a>
+							</div>
+						</td>
+						<td >
+							<p class="product_name"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iure, sint voluptatibus aliquam nobis pariatur voluptas vel ullam! Incidunt fugit provident temporibus, excepturi sint assumenda harum velit nesciunt veniam, quidem.</a></p>
+							<div class="note in_cart clearfix">
+								<textarea placeholder="Примечание: "></textarea>
+								<label class="info_key">?</label>
+								<div class="info_description">
+									<p>Поле для ввода примечания к товару.</p>
+								</div>
+							</div>
+						</td>
+						<td><p class="price">29000,34</p></td>
+						<td>
+							<div class="buy_block">
+								<div class="btn_remove">
+									<button class="mdl-button material-icons">remove</button>
+								</div>
+								<input type="text" class="qty_js" value="0">
+								<div class="btn_buy">
+									<button class="mdl-button mdl-js-button buy_btn_js" type="button"><i class="material-icons">add</i></button>
+								</div>
+							</div>
+						</td>
+						<td class="summ">23000,99</td>
+					</tr>
+					<tr class="total">
+						<td colspan="5"></td>
+						<td class="label">Итого</td>
+						<td>8</td>
+						<td>88888,88</td>
+					</tr>
+				</tbody>
+			</table>
+		</div> -->
+		<div class="action_block">
+			<div class="wrapp">
+				<div class="cart_info">
+					<div class="your_discount">Ваша скидка составила 2000грн</div>
+					<div class="tabs_container">
+						<ul>
+							<li class="in_cart_block">
+								<a href="#"><span class="material-icons">shopping_cart</span></a>
+							</li>
+							<li>0%</li>
+							<li>10%</li>
+							<li>16%</li>
+							<li class="active">21%</li>
+						</ul>
+					</div>
+					<div class="order_balance">Еще заказать на <span class="summ">10000</span> грн.</div>
+					<div class="price_nav"></div>
+				</div>
+				<button class="mdl-button mdl-js-button btn_js" data-upgraded=",MaterialButton" data-name="cart">Продолжить покупки</button>
+			</div>
+			<div class="wrapp">
+				<form action="#">
+					<div class="mdl-textfield mdl-js-textfield">
+						<input class="mdl-textfield__input" type="text" id="user_number">
+						<label class="mdl-textfield__label" for="user_number">Номер телефона</label>
+					</div>
+				</form>
+				<button class="mdl-button mdl-js-button" data-upgraded=",MaterialButton">Оформить заказ</button>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
