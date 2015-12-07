@@ -53,6 +53,13 @@ $(function(){
 						'<svg class="arrow_right"><use xlink:href="images/slider_arrows.svg#arrow_right"></use></svg>']
 	});
 
+	//Максимальная высота корзины
+	if(viewport_width > 712) {
+		var coeff = 0.8;
+	}else{
+		var coeff = 0.9;
+	}
+	$('#cart .order_wrapp').css('max-height', (viewport_height - header_outerheight)*coeff);
 
 	//Отправка формы Search
 	// $('.mob_s_btn').on('click', function() {
@@ -274,33 +281,6 @@ $(function(){
 	$('[data-type="modal"]').each(function(index, el) {
 		$(this).append('<a href="#" class="material-icons close_modal btn_js" data-name="'+$(this).attr('id')+'">close</a>');
 	});
-
-	// Открытие модального окна
-	// $('.open_modal').on('click', function(event){
-	// 	var target = $(this).data('target'),
-	// 		data_confirm = $(this).attr('data-confirm');
-	// 	event.preventDefault();
-	// 	if(data_confirm === undefined || data_confirm == ''){
-	// 		openModal(target);
-	// 	}else{
-	// 		if(!confirm(data_confirm)){
-	// 			return false;
-	// 		}
-	// 		openModal(target);
-	// 	}
-	// 	$('body').keydown(function(e){
-	// 		if(e.keyCode == 27){
-	// 			closeModal();
-	// 			return false;
-	// 		}
-	// 	});
-	// });
-
-	// // Закрытие модального окна
-	// $('#back_modal, .close_modal').on('click', function(event) {
-	// 	event.preventDefault();
-	// 	closeModal();
-	// });
 
 	//Замена картинки для открытия в ориг размере
 	$('.product_main_img').on('click', function() {
