@@ -708,6 +708,13 @@
 	<div id="cart" data-type="modal">
 		<h5>Корзина</h5>
 		<div class="order_wrapp clearfix">
+			<div class="order_head mdl-cell--hide-phone">
+				<ul>
+					<li class="photo">Фото</li>
+					<li class="name">Название</li>
+					<li class="price">Цена / Количество</li>
+				</ul>
+			</div>
 			<div class="card clearfix">
 				<i class="material-icons remove_prod mdl-cell--hide-phone">highlight_off</i>
 				<span class="remove_prod_mob">Удалить</span>
@@ -719,7 +726,7 @@
 				<p class="product_name"><a href="/product.html">Игрушка детская «Веселый поезд» Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, impedit.</a> <span class="product_article">Арт: 109742</span></p>
 				<div class="product_buy">
 					<p class="price mdl-cell--hide-phone">29000,34</p>
-					<p class="summ">сумма <span>29000,34</span></p>
+					<p class="summ">= <span>29000,34</span></p>
 					<div class="buy_block">
 						<div class="btn_remove">
 							<button class="mdl-button material-icons">remove</button>
@@ -751,7 +758,7 @@
 				<p class="product_name"><a href="/product.html">Игрушка детская «Веселый поезд» Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, impedit.</a> <span class="product_article">Арт: 109742</span></p>
 				<div class="product_buy">
 					<p class="price mdl-cell--hide-phone">29000,34</p>
-					<p class="summ">сумма <span>29000,34</span></p>
+					<p class="summ">= <span>29000,34</span></p>
 					<div class="buy_block">
 						<div class="btn_remove">
 							<button class="mdl-button material-icons">remove</button>
@@ -783,7 +790,7 @@
 				<p class="product_name"><a href="/product.html">Игрушка детская «Веселый поезд» Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, impedit.</a> <span class="product_article">Арт: 109742</span></p>
 				<div class="product_buy">
 					<p class="price mdl-cell--hide-phone">29000,34</p>
-					<p class="summ">сумма <span>29000,34</span></p>
+					<p class="summ">= <span>29000,34</span></p>
 					<div class="buy_block">
 						<div class="btn_remove">
 							<button class="mdl-button material-icons">remove</button>
@@ -815,7 +822,7 @@
 				<p class="product_name"><a href="/product.html">Игрушка детская «Веселый поезд» Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, impedit.</a> <span class="product_article">Арт: 109742</span></p>
 				<div class="product_buy">
 					<p class="price mdl-cell--hide-phone">29000,34</p>
-					<p class="summ">сумма <span>29000,34</span></p>
+					<p class="summ">= <span>29000,34</span></p>
 					<div class="buy_block">
 						<div class="btn_remove">
 							<button class="mdl-button material-icons">remove</button>
@@ -847,7 +854,7 @@
 				<p class="product_name"><a href="/product.html">Игрушка детская «Веселый поезд» Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, impedit.</a> <span class="product_article">Арт: 109742</span></p>
 				<div class="product_buy">
 					<p class="price mdl-cell--hide-phone">29000,34</p>
-					<p class="summ">сумма <span>29000,34</span></p>
+					<p class="summ">= <span>29000,34</span></p>
 					<div class="buy_block">
 						<div class="btn_remove">
 							<button class="mdl-button material-icons">remove</button>
@@ -879,7 +886,7 @@
 				<p class="product_name"><a href="/product.html">Игрушка детская «Веселый поезд» Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, impedit.</a> <span class="product_article">Арт: 109742</span></p>
 				<div class="product_buy">
 					<p class="price mdl-cell--hide-phone">29000,34</p>
-					<p class="summ">сумма <span>29000,34</span></p>
+					<p class="summ">= <span>29000,34</span></p>
 					<div class="buy_block">
 						<div class="btn_remove">
 							<button class="mdl-button material-icons">remove</button>
@@ -902,8 +909,8 @@
 			</div>
 			<div class="total">
 				<div class="label">Итого</div>
-				<div class="positions">позиций:<span>8</span></div>
-				<div>88888,88</div>
+				<div class="positions">позиций: <span>8</span></div>
+				<div class="total_summ">сумма: <span>88888,88</span></div>
 			</div>
 			<div class="action_block">
 				<div class="wrapp">
@@ -928,9 +935,35 @@
 				<div class="wrapp">
 					<form action="#">
 						<div class="mdl-textfield mdl-js-textfield">
-							<i class="material-icons call">call</i>
+							<span class="number_label">Номер телефона</span>
 							<input class="mdl-textfield__input" type="text" id="user_number">
 							<label class="mdl-textfield__label" for="user_number">Номер телефона</label>
+						</div>
+						<div class="tooltip_wrapp clearfix">
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect add_cart_state">
+								<input type="radio" class="mdl-radio__button" name="options" value="1">
+								<span class="mdl-radio__label">Групповая корзина</span>
+							</label>
+							<!-- <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label"></span>
+							</label> -->
+							<div class="info_description">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa perspiciatis blanditiis, minima repellendus
+							</div>
+						</div>
+						<div class="tooltip_wrapp clearfix">
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect add_cart_state">
+								<input type="radio" class="mdl-radio__button" name="options" value="2">
+								<span class="mdl-radio__label">Совместная покупка</span>
+							</label>
+							<!-- <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+								<input type="checkbox" class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Совместная покупка</span>
+							</label> -->
+							<div class="info_description">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa perspiciatis blanditiisima
+							</div>
 						</div>
 					</form>
 					<button class="mdl-button mdl-js-button" data-upgraded=",MaterialButton">Оформить заказ</button>

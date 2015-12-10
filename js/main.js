@@ -306,7 +306,6 @@ $(function(){
 			openObject(name);
 		}
 	});
-
 	//Обработка примечания
 	$('.note textarea').on('blur', function(){
 		$(this).css({
@@ -325,5 +324,14 @@ $(function(){
 		// 		"note": note
 		// 	}
 		// });
+	});
+	//Обработка примечания
+	$('.add_cart_state input:radio').on('click', function(){
+		var checked = false;
+		if($(this.checked)){
+			checked = true;
+		}
+		$(this).prop("checked", checked);
+		console.log('sdf');
 	});
 });
