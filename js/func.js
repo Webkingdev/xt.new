@@ -33,26 +33,13 @@ function closeObject(id){
 	DeactivateBG();
 }
 
-
-
-
-
-
 //Активация подложки
 function ActivateBG(){
 	$('body').addClass('active_bg');
 }
 //Деактивация подложки
 function DeactivateBG(){
-	// if($('body').hasClass('active_modal')){
-	// 	closeModal();
-	// }else if($('body').hasClass('active_panel')){
-	// 	closePanel();
-	// }
 	$('body').removeClass('active_bg');
-	// function(index, css){
-	// 	return (css.match(/(^|\s)active_\S+/g) || []).join(' ');
-	// }
 }
 
 //Закрытие Панели мобильного меню
@@ -61,22 +48,18 @@ function closePanel(){
 	$('.panel').slideUp();
 }
 
-/*MODAL WINDOW*/
+// /*MODAL WINDOW*/
 
-// Вызов модального окна
-function openModal(target){
-	$('body').addClass('active_modal');
-	$('#'+target+'.modal_hidden').removeClass('modal_hidden').addClass('modal_opened');
-}
-// Закрытие модального окна
-function closeModal(){
-	$('.modal_opened').removeClass('modal_opened').addClass('modal_hidden');
-	//Удаление всех классов у body которые начинаются на active_
-	// $('body').removeClass(function(index, css){
-	// 	return (css.match(/(^|\s)active_\S+/g) || []).join(' ');
-	// });
-	$('body').removeClass('active_modal');
-}
+// // Вызов модального окна
+// function openModal(target){
+// 	$('body').addClass('active_modal');
+// 	$('#'+target+'.modal_hidden').removeClass('modal_hidden').addClass('modal_opened');
+// }
+// // Закрытие модального окна
+// function closeModal(){
+// 	$('.modal_opened').removeClass('modal_opened').addClass('modal_hidden');
+// 	$('body').removeClass('active_modal');
+// }
 
 //Установка выбранного рейтинга
 function changestars(rating){

@@ -211,7 +211,7 @@ $(function(){
 
 	//Высота блока главной картики продукта
 	$('.product_main_img').css('height', $('.product_main_img').outerWidth());
-
+	console.log($('.product_main_img').outerWidth());
 	//Инициализация owl carousel
 	$("#owl-product_mini_img_js").owlCarousel({
 		items: 6,
